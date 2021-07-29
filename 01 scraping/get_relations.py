@@ -29,9 +29,9 @@ def get_relations(config):
     password = config.password
     b = Bot()
 
-    b.setUp()
-    b.go_to_page("https://www.instagram.com/accounts/login/")
-    b.login(username, password)
+    #b.setUp()
+    #b.go_to_page("https://www.instagram.com/accounts/login/")
+    #b.login(username, password)
 
     my_followers_arr = get_my_followers_from_txt()
     if not os.path.isfile(relations_file):

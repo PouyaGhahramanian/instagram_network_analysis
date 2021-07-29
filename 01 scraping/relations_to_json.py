@@ -24,8 +24,12 @@ def relations_to_json(config):
     with open(input_txt_file, 'r') as f:
         for line in f:
             accounts = line.split(" ")
+            #print(accounts[0])
+            #print(re.search('https://www.instagram.com/(.*)/', accounts[0]))
             account_1 = re.search('https://www.instagram.com/(.*)/', accounts[0]).group(1)
             account_2 = re.search('https://www.instagram.com/(.*)/', accounts[1]).group(1)
+            #print(account_1)
+            #print(account_2)
 
             nodes.add(account_1)
             if include_me:
@@ -81,4 +85,3 @@ if __name__ == '__main__':
     config = parser.parse_args()
 
     relations_to_json(config)
-
